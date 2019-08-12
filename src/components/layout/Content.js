@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Input from '../forms/Input';
 
 class Content extends Component {
 
@@ -90,6 +91,12 @@ class Content extends Component {
                             <label className="label label--medium">Label</label>
                             <input className="input shadow--inset--small" type="text"/>
                         </div>
+
+
+                        <Input label="teste" />
+
+                        <Input label="teste222" isError initValue={"valor teste"} />
+
                         <div className="padding--small flex flex--column">
                             <label className="label label--medium is-error">Label</label>
                             <input className="input shadow--inset--small is-error" type="text"/>
