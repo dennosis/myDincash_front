@@ -28,10 +28,45 @@ class Radio extends Component {
         if(this.props.isError)
             error="is-error"
 
+
+        let classLabel=""
+        let classRadio=""
+    
+
+        let classOptionContainer=""
+        let classOptionsContainer=""
+
+        if(this.props.classLabel){
+            classLabel=this.props.classLabel
+        }else{
+            classLabel=`flex flex-align-items--center label label--medium ${this.props.classLabelAdd || ''}`
+        }
+
+        if(this.props.classRadio){
+            classRadio=this.props.classRadio
+        }else{
+            classRadio=`radio margin--xsmall shadow--inset--small ${this.props.classRadioAdd || ''}`
+        }
+
+        if(this.props.classOptionsContainer){
+            classOptionsContainer=this.props.classOptionsContainer
+        }else{
+            classOptionsContainer=`flex flex-align-items--center ${this.props.classOptionsContainerAdd || ''}`
+        }
+
+        if(this.props.classOptionContainer){
+            classOptionContainer=this.props.classOptionContainer
+        }else{
+            classOptionContainer=`flex flex-align-items--center ${this.props.classOptionContainerAdd || ''}`
+        }
+    
+
+
+
         return (
-            <label className={`padding--small flex flex--column label label--medium ${verified} ${error}`} >
+            <label className={`${classLabel} ${verified} ${error}`} >
                 {this.props.label}
-                <div className={`flex flex--column`}>
+                <div className={`${classOptionsContainer}`}>
                     
                     {
                         this.props.options &&
@@ -45,8 +80,8 @@ class Radio extends Component {
                                 }
 
                                 return(
-                                    <div key={index} className={`flex flex-align-items--center`}>
-                                        <div  className={`radio margin--xsmall shadow--inset--small ${addClass}`} onClick={()=>this.handleChange(item.value)}></div>
+                                    <div key={index} className={`${classOptionContainer}`}>
+                                        <div  className={`${classRadio} ${addClass}`} onClick={()=>this.handleChange(item.value)}></div>
                                         <span>{item.label}</span>
                                     </div>
                                 )

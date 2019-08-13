@@ -27,24 +27,45 @@ class Select extends Component {
         if(this.props.isError)
             error="is-error"
 
+        
+        
+        let classSelect=""
+        let classLabel=""
+        let classOption=""
+
+        if(this.props.classInput){
+            classSelect=this.props.classSelect
+        }else{
+            classSelect=`select shadow--inset--small ${this.props.classSelectAdd || ''}`
+        }
+    
+        if(this.props.classLabel){
+            classLabel=this.props.classLabel
+        }else{
+            classLabel=`label label--medium ${this.props.classLabelAdd || ''}`
+        }
+    
+        if(this.props.classOption){
+            classOption=this.props.classOption
+        }else{
+            classOption=`select__option ${this.props.classOptionAdd || ''}`
+        }
+    
+
         return (
-            <label className={`padding--small flex flex--column label label--medium ${verified} ${error}`} >
+            <label className={`${classLabel} ${verified} ${error}`} >
                 {this.props.label}
-                <select className={`select shadow--inset--small ${verified} ${error}`} onChange={this.handleChange} value={this.state.value}>
+                <select className={`${classSelect} ${verified} ${error}`} onChange={this.handleChange} value={this.state.value}>
                     {
                         this.props.emptyFirst &&
-                        <option className="select__option" value=""></option>
-
+                        <option className={`${classOption}`} value=""></option>
                     }
                     
                     {
                         this.props.options &&
-                        
                             this.props.options.map((item,index)=>{
-                                
-                                return <option key={index} className="select__option" value={item.value}>{item.label}</option>
+                                return <option key={index} className={`${classOption}`} value={item.value}>{item.label}</option>
                             })
-                        
                     }
                 </select>
 

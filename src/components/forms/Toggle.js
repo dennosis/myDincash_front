@@ -34,6 +34,33 @@ class Toggle extends Component {
             btnLabel="on"
         }
 
+
+
+        let classSelect=""
+        let classLabel=""
+        let classOption=""
+
+        if(this.props.classInput){
+            classSelect=this.props.classSelect
+        }else{
+            classSelect=`select shadow--inset--small ${this.props.classSelectAdd}`
+        }
+    
+        if(this.props.classLabel){
+            classLabel=this.props.classLabel
+        }else{
+            classLabel=`label label--medium ${this.props.classLabelAdd}`
+        }
+    
+        if(this.props.classOption){
+            classOption=this.props.classOption
+        }else{
+            classOption=`select__option ${this.props.classOptionAdd}`
+        }
+
+
+
+
         return (
             <label className={`padding--small flex flex--column label label--medium ${verified} ${error}`} >
                 {this.props.label}

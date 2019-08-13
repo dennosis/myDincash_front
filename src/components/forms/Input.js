@@ -27,15 +27,27 @@ class Input extends Component {
         if(this.props.isError)
             error="is-error"
 
+        let classInput=""
+        let classLabel=""
+        if(this.props.classInput){
+            classInput=this.props.classInput
+        }else{
+            classInput=`input shadow--inset--small ${this.props.classInputAdd || ''}`
+        }
+
+        if(this.props.classLabel){
+            classLabel=this.props.classLabel
+        }else{
+            classLabel=`label label--medium ${this.props.classLabelAdd || ''}`
+        }
+
         return (
-            <label className={`padding--small flex flex--column label label--medium ${verified} ${error}`} >
+            <label className={`${classLabel} ${verified} ${error}`} >
                 {this.props.label}
-                <input className={`input shadow--inset--small ${verified} ${error}`} type="text" onChange={this.handleChange} defaultValue={this.state.value}/>
+                <input className={`${classInput}  ${verified} ${error}`} type="text" onChange={this.handleChange} defaultValue={this.state.value}/>
             </label>
         );
     }
 }
  
-
-
 export default Input
