@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Input from '../forms/Input';
+import Select from '../forms/Select';
+import Toggle from '../forms/Toggle';
+import Radio from '../forms/Radio';
 
 class Content extends Component {
 
@@ -62,79 +65,66 @@ class Content extends Component {
                             <label className="label label--medium is-verified">Label</label>
                             <div className="radio shadow--inset--small is-active is-verified"></div>
                         </div>
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium">Label</label>
-                            <div className="toggle shadow--inset--small"><span className="toggle__button">off</span></div>
-                        </div>
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium">Label</label>
-                            <div className="toggle shadow--inset--small is-active"><span className="toggle__button is-active">on</span></div>
-                        </div>
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium is-error">Label</label>
-                            <div className="toggle shadow--inset--small is-error"><span className="toggle__button is-error">off</span></div>
-                        </div>
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium is-verified">Label</label>
-                            <div className="toggle shadow--inset--small is-verified"><span className="toggle__button is-verified">off</span></div>
-                        </div>
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium is-error">Label</label>
-                            <div className="toggle shadow--inset--small is-active is-error"><span className="toggle__button is-error">off</span></div>
-                        </div>
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium is-verified">Label</label>
-                            <div className="toggle shadow--inset--small is-active is-verified"><span className="toggle__button is-verified">off</span></div>
-                        </div>
-
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium">Label</label>
-                            <input className="input shadow--inset--small" type="text"/>
-                        </div>
 
 
-                        <Input label="teste" />
+                        <Radio label={'Radio teste'} isVerified options={[
+                            {value: 1, label: "um"},
+                            {value: 2, label: "dois"},
+                            {value: 3, label: "tres"},
+                            {value: 4, label: "quatro"},
+                            {value: 5, label: "cinco"},
+
+                        ]}/>
+
+                        <Radio label={'Radio teste'} isError options={[
+                            {value: 1, label: "um"},
+                            {value: 2, label: "dois"},
+                            {value: 3, label: "tres"},
+                            {value: 4, label: "quatro"},
+                            {value: 5, label: "cinco"},
+
+                        ]}/>
+
+
+                        <Toggle label="teste" isActive />
+
+                        <Toggle label="teste" isActive isError/>
+
+                        <Toggle label="teste" isActive isVerified/>
+
+                        <Input label="teste" isVerified />
+
+                        <Input label="teste" isVerified />
 
                         <Input label="teste222" isError initValue={"valor teste"} />
 
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium is-error">Label</label>
-                            <input className="input shadow--inset--small is-error" type="text"/>
-                        </div>
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium is-verified">Label</label>
-                            <input className="input shadow--inset--small is-verified" type="text"/>
-                        </div>
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium">Label</label>
-                            <select className="select shadow--inset--small" name="" id="">
-                                <option className="select__option" value="">teste</option>
-                                <option className="select__option" value="">teste</option>
-                                <option className="select__option" value="">teste</option>
-                                <option className="select__option" value="">teste</option>
-                                <option className="select__option" value="">teste</option>
-                            </select>
-                        </div>
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium is-error">Label</label>
-                            <select className="select is-error shadow--inset--small" name="" id="">
-                                <option className="select__option" value="">teste</option>
-                                <option className="select__option" value="">teste</option>
-                                <option className="select__option" value="">teste</option>
-                                <option className="select__option" value="">teste</option>
-                                <option className="select__option" value="">teste</option>
-                            </select>
-                        </div>
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium is-verified">Label</label>
-                            <select className="select is-verified shadow--inset--small" name="" id="">
-                                <option className="select__option" value="">teste</option>
-                                <option className="select__option" value="">teste</option>
-                                <option className="select__option" value="">teste</option>
-                                <option className="select__option" value="">teste</option>
-                                <option className="select__option" value="">teste</option>
-                            </select>
-                        </div>
+
+                        <Select label={'select teste'} emptyFirst options={[
+                            {value: 1, label: "um"},
+                            {value: 2, label: "dois"},
+                            {value: 3, label: "tres"},
+                            {value: 4, label: "quatro"},
+                            {value: 5, label: "cinco"},
+
+                        ]}/>
+
+                        <Select label={'select teste'} isError emptyFirst options={[
+                            {value: 1, label: "um"},
+                            {value: 2, label: "dois"},
+                            {value: 3, label: "tres"},
+                            {value: 4, label: "quatro"},
+                            {value: 5, label: "cinco"},
+
+                        ]}/>
+
+                        <Select label={'select teste'} isVerified emptyFirst options={[
+                            {value: 1, label: "um"},
+                            {value: 2, label: "dois"},
+                            {value: 3, label: "tres"},
+                            {value: 4, label: "quatro"},
+                            {value: 5, label: "cinco"},
+
+                        ]}/>
 
                         <div className="padding-top--small padding-bottom--small flex">
                                 <span className="button flex__item--grow margin--small shadow--small">button</span>

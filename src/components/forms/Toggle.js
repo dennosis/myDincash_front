@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 
-class Input extends Component {
+class Toggle extends Component {
     constructor(props){
         super(props)
         this.state={
-            value:false || props.initValue
+            value:false || props.isActive
         }
     }
 
     handleChange = (event) =>{
         event.preventDefault();
         this.setState({
-            value: event.target.value
+            value: !this.state.value
         });
         if(this.props.onChange)
             this.props.onChange(this.state.value)
@@ -20,6 +20,8 @@ class Input extends Component {
     render() {
         let error=""
         let verified=""
+        let active=""
+        let btnLabel="off"
 
         if(this.props.isVerified)
             verified="is-verified"
@@ -27,10 +29,17 @@ class Input extends Component {
         if(this.props.isError)
             error="is-error"
 
+        if(this.state.value){
+            active="is-active"
+            btnLabel="on"
+        }
+
         return (
             <label className={`padding--small flex flex--column label label--medium ${verified} ${error}`} >
                 {this.props.label}
-                <input className={`input shadow--inset--small ${verified} ${error}`} type="text" onChange={this.handleChange} defaultValue={this.state.value}/>
+                <div className={`toggle shadow--inset--small ${verified} ${error} ${active}`} onClick={this.handleChange}>
+                    <span className={`toggle__button  ${verified} ${error}`}>{btnLabel}</span>
+                </div>
             </label>
         );
     }
@@ -38,4 +47,6 @@ class Input extends Component {
  
 
 
-export default Input
+export default Toggle
+
+
