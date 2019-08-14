@@ -34,46 +34,41 @@ class Toggle extends Component {
             btnLabel="on"
         }
 
-
-
-        let classSelect=""
         let classLabel=""
-        let classOption=""
-
-        if(this.props.classInput){
-            classSelect=this.props.classSelect
-        }else{
-            classSelect=`select shadow--inset--small ${this.props.classSelectAdd}`
-        }
     
+        let classToggle=""
+
+        let classButton=""
+
         if(this.props.classLabel){
             classLabel=this.props.classLabel
         }else{
-            classLabel=`label label--medium ${this.props.classLabelAdd}`
+            classLabel=`flex flex-align-items--center label label--medium ${this.props.classLabelAdd}`
         }
-    
-        if(this.props.classOption){
-            classOption=this.props.classOption
+
+        if(this.props.classToggle){
+            classToggle=this.props.classToggle
         }else{
-            classOption=`select__option ${this.props.classOptionAdd}`
+            classToggle=`toggle shadow--inset--small ${this.props.classToggleAdd || ""}`
         }
 
-
-
+        if(this.props.classButton){
+            classButton=this.props.classButton
+        }else{
+            classButton=`toggle__button ${this.props.classButtonAdd}`
+        }
 
         return (
-            <label className={`padding--small flex flex--column label label--medium ${verified} ${error}`} >
+            <label className={`${classLabel} ${verified} ${error}`} >
                 {this.props.label}
-                <div className={`toggle shadow--inset--small ${verified} ${error} ${active}`} onClick={this.handleChange}>
-                    <span className={`toggle__button  ${verified} ${error}`}>{btnLabel}</span>
+                <div className={`${classToggle} ${verified} ${error} ${active}`} onClick={this.handleChange}>
+                    <span className={`${classButton} ${verified} ${error}`}>{btnLabel}</span>
                 </div>
             </label>
         );
     }
 }
  
-
-
 export default Toggle
 
 

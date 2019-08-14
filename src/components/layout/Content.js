@@ -41,32 +41,15 @@ class Content extends Component {
                     </div>
                 
                     <form className="margin--small flex flex--column padding--medium flex--wrap flex--stretch--between block shadow--small">
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium">Label</label>
-                            <div className="radio shadow--inset--small"></div>
-                        </div>
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium">Label</label>
-                            <div className="radio shadow--inset--small is-active"></div>
-                        </div>
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium is-error">Label</label>
-                            <div className="radio shadow--inset--small is-error"></div>
-                        </div>
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium is-verified">Label</label>
-                            <div className="radio shadow--inset--small is-verified"></div>
-                        </div>
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium is-error">Label</label>
-                            <div className="radio shadow--inset--small is-active is-error"></div>
-                        </div>
-                        <div className="padding--small flex flex--column">
-                            <label className="label label--medium is-verified">Label</label>
-                            <div className="radio shadow--inset--small is-active is-verified"></div>
-                        </div>
+                      
+                    <Radio label={'Radio teste'} options={[
+                            {value: 1, label: "um"},
+                            {value: 2, label: "dois"},
+                            {value: 3, label: "tres"},
+                            {value: 4, label: "quatro"},
+                            {value: 5, label: "cinco"},
 
-
+                    ]}/>
                         <Radio label={'Radio teste'} isVerified options={[
                             {value: 1, label: "um"},
                             {value: 2, label: "dois"},

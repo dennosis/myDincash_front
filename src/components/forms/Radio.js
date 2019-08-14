@@ -35,7 +35,7 @@ class Radio extends Component {
 
         let classOptionContainer=""
         let classOptionsContainer=""
-
+        let classOptionLabel=""
         if(this.props.classLabel){
             classLabel=this.props.classLabel
         }else{
@@ -45,7 +45,7 @@ class Radio extends Component {
         if(this.props.classRadio){
             classRadio=this.props.classRadio
         }else{
-            classRadio=`radio margin--xsmall shadow--inset--small ${this.props.classRadioAdd || ''}`
+            classRadio=`radio shadow--inset--small ${this.props.classRadioAdd || ''}`
         }
 
         if(this.props.classOptionsContainer){
@@ -59,7 +59,12 @@ class Radio extends Component {
         }else{
             classOptionContainer=`flex flex-align-items--center ${this.props.classOptionContainerAdd || ''}`
         }
-    
+        
+        if(this.props.classOptionLabel){
+            classOptionLabel=this.props.classOptionLabel
+        }else{
+            classOptionLabel=`radio__label ${this.props.classOptionLabelAdd || ''}`
+        }
 
 
 
@@ -82,7 +87,7 @@ class Radio extends Component {
                                 return(
                                     <div key={index} className={`${classOptionContainer}`}>
                                         <div  className={`${classRadio} ${addClass}`} onClick={()=>this.handleChange(item.value)}></div>
-                                        <span>{item.label}</span>
+                                        <span className={`${classOptionLabel} ${addClass}`} >{item.label}</span>
                                     </div>
                                 )
                             })
