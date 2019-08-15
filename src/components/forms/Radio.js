@@ -39,7 +39,7 @@ class Radio extends Component {
         if(this.props.classLabel){
             classLabel=this.props.classLabel
         }else{
-            classLabel=`flex flex-align-items--center label label--medium ${this.props.classLabelAdd || ''}`
+            classLabel=`flex label label--medium ${this.props.classLabelAdd || ''}`
         }
 
         if(this.props.classRadio){
@@ -51,7 +51,7 @@ class Radio extends Component {
         if(this.props.classOptionsContainer){
             classOptionsContainer=this.props.classOptionsContainer
         }else{
-            classOptionsContainer=`flex flex-align-items--center ${this.props.classOptionsContainerAdd || ''}`
+            classOptionsContainer=`flex ${this.props.classOptionsContainerAdd || ''}`
         }
 
         if(this.props.classOptionContainer){

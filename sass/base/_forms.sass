@@ -1,0 +1,76 @@
+// box-shadow: inset 0px 0px 10px #d7695f30
+.input
+    @extend %font-regular, %font-medium
+    background: transparent
+    border: $xxsmall solid $grey-blue-30
+    border-radius: $small
+    padding: $medium
+    color: $grey-blue-10
+    box-sizing: border-box
+
+.select
+    @extend %font-regular, %font-medium
+    background: transparent
+    border: $xxsmall solid $grey-blue-30
+    border-radius: $small
+    padding: $medium
+    color: $grey-blue-10
+    box-sizing: border-box
+    cursor: pointer
+    &__option
+        background:  $grey-blue-40
+        color: $grey-blue-10
+        border: none
+
+.radio
+    height: 20px
+    width: 20px
+    border: $xxsmall solid $grey-blue-30
+    background: transparent
+    border-radius: $small
+    cursor: pointer
+    &__label
+        @extend %font-regular, %font-medium
+        color: $grey-blue-20
+
+.toggle
+    height: 20px
+    width: 40px
+    border: $xxsmall solid $grey-blue-30
+    background: transparent
+    border-radius: $small
+    display: flex
+    padding: $xxsmall
+    justify-content: flex-start
+    cursor: pointer
+    &__button
+        @extend %font-bold, %font-small, %text-upercase
+        width: 60%
+        background-color: $grey-blue-30
+        border-radius: $xsmall
+        color: $grey-blue-20
+        display: flex
+        justify-content: center
+        align-items: center
+
+.button
+    @extend %font-regular, %font-medium
+    background: $grey-blue-30 
+    border-radius: $small
+    padding: $medium
+    color: $grey-blue-10
+    border: none
+    cursor: pointer
+    border: $xxsmall solid $grey-blue-30
+
+.label
+    @extend %font-light
+    color: $grey-blue-20
+    &--xlarge
+        @extend %font-xlarge
+    &--large
+        @extend %font-large
+    &--medium
+        @extend %font-medium
+    &--small
+        @extend %font-small

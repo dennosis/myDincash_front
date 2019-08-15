@@ -1,0 +1,271 @@
+.height
+    &--auto
+        height: auto
+    &--100
+        height: 100%
+    &-max
+        &--auto
+            max-height: auto
+        &--100
+            max-height: 100%
+    &-min
+        &--auto
+            min-height: auto
+            object-fit: cover
+        &--100
+            min-height: 100%
+            object-fit: cover
+        &--0
+            min-height: 0
+            object-fit: cover
+
+.height
+    &--auto
+        width: auto
+    &--100
+        width: 100%
+    &-max
+        &--auto
+            max-width: auto
+        &--100
+            max-width: 100%
+    &-min
+        &--auto
+            min-width: auto
+            object-fit: cover
+        &--100
+            min-width: 100%
+            object-fit: cover
+        &--0
+            min-width: 0
+            object-fit: cover
+
+.flex
+    display: flex
+    &-align-items
+        &--center
+            align-items: center  
+        &--start
+            align-items: flex-start
+        &--end
+            align-items: flex-end
+        &--stretch
+            align-items: stretch
+    &-align-content
+        &--center
+            align-content: center  
+        &--start
+            align-content: flex-start
+        &--end
+            align-content: flex-end
+    &-justify-content
+        &--center
+            justify-content: center
+        &--left
+            justify-content: left
+        &--right
+            justify-content: right
+        &--around
+            justify-content: space-around
+        &--between
+            justify-content: space-between
+    &--column
+        flex-direction: column
+    &--wrap
+        flex-wrap: wrap
+    &__item
+        flex-grow: 0
+        flex-shrink: 0
+        &--grow   
+            flex-grow: 1
+        &--shrink
+            flex-shrink: 1
+        &--shrink--grow
+            flex-shrink: 1
+            flex-grow: 1
+
+.shadow
+    &--inset
+        &--medium
+            box-shadow: inset $medium $medium $large $black-transparent-10;
+        &--small
+            box-shadow: inset $small $small $medium $black-transparent-10;
+    &--medium
+            box-shadow: $medium $medium $large $black-transparent-10;
+    &--small
+            box-shadow: $small $small $medium $black-transparent-10;
+
+.margin
+    &--xlarge
+        margin: $xlarge
+    &--large
+        margin: $large
+    &--medium
+        margin: $medium
+    &--small
+        margin: $small
+    &--xsmall
+        margin: $xsmall
+    &-top
+        &--xlarge
+            margin-top: $xlarge
+        &--large
+            margin-top: $large
+        &--medium
+            margin-top: $medium
+        &--small
+            margin-top: $small
+        &--xsmall
+            margin-top: $xsmall
+    &-left
+        &--xlarge
+            margin-left: $xlarge
+        &--large
+            margin-left: $large
+        &--medium
+            margin-left: $medium
+        &--small
+            margin-left: $small
+        &--xsmall
+            margin-left: $xsmall
+    &-bottom
+        &--xlarge
+            margin-bottom: $xlarge
+        &--large
+            margin-bottom: $large
+        &--medium
+            margin-bottom: $medium
+        &--small
+            margin-bottom: $small
+        &--xsmall
+            margin-bottom: $xsmall
+    &-right
+        &--xlarge
+            margin-right: $xlarge
+        &--large
+            margin-right: $large
+        &--medium
+            margin-right: $medium
+        &--small
+            margin-right: $small
+        &--xsmall
+            margin-right: $xsmall
+
+.padding
+    &--xlarge
+        padding: $xlarge
+    &--large
+        padding: $large
+    &--medium
+        padding: $medium
+    &--small
+        padding: $small
+    &--xsmall
+        padding: $xsmall
+    &-top
+        &--xlarge
+            padding-top: $xlarge
+        &--large
+            padding-top: $large
+        &--medium
+            padding-top: $medium
+        &--small
+            padding-top: $small
+        &--xsmall
+            padding-top: $xsmall
+    &-left
+        &--xlarge
+            padding-left: $xlarge
+        &--large
+            padding-left: $large
+        &--medium
+            padding-left: $medium
+        &--small
+            padding-left: $small
+        &--xsmall
+            padding-left: $xsmall
+    &-bottom
+        &--xlarge
+            padding-bottom: $xlarge
+        &--large
+            padding-bottom: $large
+        &--medium
+            padding-bottom: $medium
+        &--small
+            padding-bottom: $small
+        &--xsmall
+            padding-bottom: $xsmall
+    &-right
+        &--xlarge
+            padding-right: $xlarge
+        &--large
+            padding-right: $large
+        &--medium
+            padding-right: $medium
+        &--small
+            padding-right: $small
+        &--xsmall
+            padding-right: $xsmall
+
+.overflow
+    &--auto
+        overflow: auto
+    &--hidden
+        overflow: hidden
+
+.border
+    &-radius
+        &--xlarge
+            border-radius: $xlarge
+        &--large
+            border-radius: $large
+        &--medium
+            border-radius: $medium
+        &--small
+            border-radius: $small
+        &--xsmall
+            border-radius: $xsmall
+        &-top-left
+            &--xlarge
+                border-top-left-radius: $xlarge
+            &--large
+                border-top-left-radius: $large
+            &--medium
+                border-top-left-radius: $medium
+            &--small
+                border-top-left-radius: $small
+            &--xsmall
+                border-top-left-radius: $xsmall
+        &-top-right
+            &--xlarge
+                border-top-right-radius: $xlarge
+            &--large
+                border-top-right-radius: $large
+            &--medium
+                border-top-right-radius: $medium
+            &--small
+                border-top-right-radius: $small
+            &--xsmall
+                border-top-right-radius: $xsmall
+        &-bottom-left
+            &--xlarge
+                border-bottom-left-radius: $xlarge
+            &--large
+                border-bottom-left-radius: $large
+            &--medium
+                border-bottom-left-radius: $medium
+            &--small
+                border-bottom-left-radius: $small
+            &--xsmall
+                border-bottom-left-radius: $xsmall
+        &-bottom-right
+            &--xlarge
+                border-bottom-right-radius: $xlarge
+            &--large
+                border-bottom-right-radius: $large
+            &--medium
+                border-bottom-right-radius: $medium
+            &--small
+                border-bottom-right-radius: $small
+            &--xsmall
+                border-bottom-right-radius: $xsmall

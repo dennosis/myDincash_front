@@ -1,0 +1,50 @@
+.l-main-grid
+    display: grid
+    grid-gap: 0px
+    grid-template-columns: 75px auto 75px
+    grid-template-rows: 75px auto
+    grid-template-areas: "header header user" "menu content footer"
+    box-sizing: border-box;
+    width: 900px
+    height: 500px 
+    background-color: $grey-blue-30
+    border-radius: $xlarge
+    box-shadow: inset 5px 5px 20px #0000004a;
+
+
+@media screen and (max-width: 940px) and (orientation: landscape)
+    .l-main-grid
+        width: 100%
+        height: 100%
+
+@media (max-width: 940px)
+    .l-main-grid
+        width: 100%
+        height: 100%
+        grid-template-rows: 75px 75px auto
+        grid-template-areas: "header header user" "menu menu menu" "content content footer"
+
+@media (max-width: 480px)
+    .l-main-grid
+        width: 100%
+        height: 100%
+        grid-template-rows: 50px 50px auto 50px;
+        grid-template-columns: 50px auto 50px;
+        grid-template-areas: "header header user" "menu menu menu" "content content content" "footer footer footer"
+        border-radius: 0
+
+@media (max-width: 840px) and (orientation: landscape) and (max-height: 480px)
+    .l-main-grid
+        width: 100%
+        height: 100%
+        grid-template-rows: 50px auto;
+        grid-template-columns: 50px auto 50px;
+        grid-template-areas: "header header user" "menu content footer "
+        border-radius: 0
+
+
+
+
+
+
+

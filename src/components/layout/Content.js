@@ -41,33 +41,51 @@ class Content extends Component {
                     </div>
                 
                     <form className="margin--small flex flex--column padding--medium flex--wrap flex--stretch--between block shadow--small">
-                      
-                    <Radio label={'Radio teste'} options={[
-                            {value: 1, label: "um"},
-                            {value: 2, label: "dois"},
-                            {value: 3, label: "tres"},
-                            {value: 4, label: "quatro"},
-                            {value: 5, label: "cinco"},
-
-                    ]}/>
-                        <Radio label={'Radio teste'} isVerified options={[
-                            {value: 1, label: "um"},
-                            {value: 2, label: "dois"},
-                            {value: 3, label: "tres"},
-                            {value: 4, label: "quatro"},
-                            {value: 5, label: "cinco"},
+                    <div class="flex flex-justify-content--around">
+                        <Radio label={'Radio teste'}
+                            classLabelAdd="flex--column" 
+                            classOptionsContainerAdd="flex--column" 
+                            classOptionContainerAdd=" flex"
+                            classRadioAdd="margin--xsmall"
+                            options={[
+                                {value: 1, label: "um"},
+                                {value: 2, label: "dois"},
+                                {value: 3, label: "tres"},
+                                {value: 4, label: "quatro"},
+                                {value: 5, label: "cinco"},
 
                         ]}/>
+                            <Radio label={'Radio teste'} 
+                                classLabelAdd="flex--column" 
+                                classOptionsContainer="flex--column" 
+                                classOptionContainerAdd=" flex"
+                                classRadioAdd="margin--xsmall"
+                                isVerified 
+                                options={[
+                                    {value: 1, label: "um"},
+                                    {value: 2, label: "dois"},
+                                    {value: 3, label: "tres"},
+                                    {value: 4, label: "quatro"},
+                                    {value: 5, label: "cinco"},
 
-                        <Radio label={'Radio teste'} isError options={[
-                            {value: 1, label: "um"},
-                            {value: 2, label: "dois"},
-                            {value: 3, label: "tres"},
-                            {value: 4, label: "quatro"},
-                            {value: 5, label: "cinco"},
+                            ]}/>
 
-                        ]}/>
+                            <Radio 
+                                classLabelAdd="flex--column" 
+                                classOptionsContainer="flex--column" 
+                                classOptionContainerAdd=" flex"
+                                classRadioAdd="margin--xsmall"
+                                label={'Radio teste'} 
+                                isError 
+                                options={[
+                                    {value: 1, label: "um"},
+                                    {value: 2, label: "dois"},
+                                    {value: 3, label: "tres"},
+                                    {value: 4, label: "quatro"},
+                                    {value: 5, label: "cinco"},
+                            ]}/>
 
+                    </div>
 
                         <Toggle label="teste" isActive />
 
