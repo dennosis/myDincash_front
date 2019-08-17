@@ -3,7 +3,7 @@ import Input from '../forms/Input';
 import Select from '../forms/Select';
 import Toggle from '../forms/Toggle';
 import Radio from '../forms/Radio';
-
+import Carousel from '../utils/Carousel';
 class Content extends Component {
 
   render() {
@@ -15,33 +15,12 @@ class Content extends Component {
                     <div className="flex flex--column flex--wrap"> 
                         <div className="register margin--small block shadow--small flex flex__item--shrink"></div>
                         <div className="register margin--small block shadow--small flex flex__item--shrink"></div>
-                        <div className="register margin--small block shadow--small flex flex__item--shrink"></div>
-                        <div className="register margin--small block shadow--small flex flex__item--shrink"></div>
-                        <div className="register margin--small block shadow--small flex flex__item--shrink"></div>
-                        <div className="register margin--small block shadow--small flex flex__item--shrink"></div>
-                        <div className="register margin--small block shadow--small flex flex__item--shrink"></div>
                     </div>
 
-                    <div className="carousel flex flex-align-items--stretch flex-justify-content--between">
-                        <div className="carousel__button margin--small block shadow--small border-radius--small"></div>
-                        <div className="carousel__body flex flex-align-items--stretch overflow--hidden flex-justify-content--between">
-                            <div className="carousel__item margin--small block shadow--small flex__item"></div>
-                            <div className="carousel__item margin--small block shadow--small flex__item"></div>
-                            <div className="carousel__item margin--small block shadow--small flex__item"></div>
-                            <div className="carousel__item margin--small block shadow--small flex__item"></div>
-                            <div className="carousel__item margin--small block shadow--small flex__item"></div>
-                            <div className="carousel__item margin--small block shadow--small flex__item"></div>
-                            <div className="carousel__item margin--small block shadow--small flex__item"></div>
-                            <div className="carousel__item margin--small block shadow--small flex__item"></div>
-                            <div className="carousel__item margin--small block shadow--small flex__item"></div>
-                            <div className="carousel__item margin--small block shadow--small flex__item"></div>
-                            <div className="carousel__item margin--small block shadow--small flex__item"></div>
-                        </div>
-                        <div className="carousel__button block margin--small shadow--small border-radius--small"></div>
-                    </div>
+                    <Carousel/>
                 
                     <form className="margin--small flex flex--column padding--medium flex--wrap flex--stretch--between block shadow--small">
-                    <div class="flex flex-justify-content--around">
+                    <div className="flex flex-justify-content--around">
                         <Radio label={'Radio teste'}
                             classLabelAdd="flex--column" 
                             classOptionsContainerAdd="flex--column" 
