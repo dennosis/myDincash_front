@@ -96,13 +96,16 @@
 .shadow
     &--inset
         &--medium
-            box-shadow: inset $medium $medium $large $black-transparent-10;
-        &--small
+            //box-shadow: inset $medium $medium $large $black-transparent-10;
             box-shadow: inset $small $small $medium $black-transparent-10;
+        &--small
+            //box-shadow: inset $small $small $medium $black-transparent-10;
+            box-shadow: inset $xxsmall $xxsmall $small $black-transparent-10;
+
     &--medium
-            box-shadow: $medium $medium $large $black-transparent-10;
+        box-shadow: inset $small $small $medium $black-transparent-10;
     &--small
-            box-shadow: $small $small $medium $black-transparent-10;
+        box-shadow: $xxsmall $xxsmall $small $black-transparent-10;
 
 .margin
     &--xlarge
