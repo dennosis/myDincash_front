@@ -55,20 +55,22 @@ class Select extends Component {
         return (
             <label className={`${classLabel} ${verified} ${error}`} >
                 {this.props.label}
-                <select className={`${classSelect} ${verified} ${error}`} onChange={this.handleChange} value={this.state.value}>
-                    {
-                        this.props.emptyFirst &&
-                        <option className={`${classOption}`} value=""></option>
-                    }
-                    
-                    {
-                        this.props.options &&
-                            this.props.options.map((item,index)=>{
-                                return <option key={index} className={`${classOption}`} value={item.value}>{item.label}</option>
-                            })
-                    }
-                </select>
-
+                <div className="select-container">
+                    <select className={`${classSelect} ${verified} ${error}`} onChange={this.handleChange} value={this.state.value}>
+                        {
+                            this.props.emptyFirst &&
+                            <option className={`${classOption}`} value=""></option>
+                        }
+                        
+                        {
+                            this.props.options &&
+                                this.props.options.map((item,index)=>{
+                                    return <option key={index} className={`${classOption}`} value={item.value}>{item.label}</option>
+                                })
+                        }
+                    </select>
+                    <div class="select-ico">></div>
+                </div>
 
             </label>
         );
