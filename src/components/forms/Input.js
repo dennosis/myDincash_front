@@ -43,7 +43,7 @@ class Input extends Component {
 
         return (
             <label className={`${classLabel} ${verified} ${error}`} >
-                {this.props.label}
+                <span>{this.props.label}</span>
                 <input className={`${classInput}  ${verified} ${error}`} type="text" onChange={this.handleChange} defaultValue={this.state.value}/>
             </label>
         );

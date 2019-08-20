@@ -17,10 +17,21 @@
     color: $grey-blue-10
     box-sizing: border-box
     cursor: pointer
+    z-index: 10
+    padding-right: calc(20px + #{$medium})
     &__option
         background:  $grey-blue-40
         color: $grey-blue-10
         border: none
+    &-container
+        position: relative
+    &-ico
+        width: 20px
+        margin-left: -20px
+        background-color: $grey-blue-30
+        border: $xxsmall solid $grey-blue-30
+        border-top-right-radius: $small
+        border-bottom-right-radius: $small
 
 .radio
     height: 20px

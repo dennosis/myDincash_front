@@ -70,7 +70,7 @@ class Radio extends Component {
 
         return (
             <label className={`${classLabel} ${verified} ${error}`} >
-                {this.props.label}
+                <span>{this.props.label}</span>
                 <div className={`${classOptionsContainer}`}>
                     
                     {

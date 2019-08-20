@@ -61,7 +61,7 @@ export default class Toggle extends Component {
 
         return (
             <label className={`${classLabel} ${verified} ${error}`} >
-                {this.props.label}
+                <span>{this.props.label}</span>
                 <div className={`${classToggle} ${verified} ${error} ${active}`} onClick={this.handleChange}>
                     <span className={`${classButton} ${verified} ${error}`}>{btnLabel}</span>
                 </div>

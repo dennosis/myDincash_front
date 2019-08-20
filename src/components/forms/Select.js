@@ -42,7 +42,7 @@ class Select extends Component {
         if(this.props.classLabel){
             classLabel=this.props.classLabel
         }else{
-            classLabel=`label label--medium ${this.props.classLabelAdd || ''}`
+            classLabel=`label label--medium flex ${this.props.classLabelAdd || ''}`
         }
     
         if(this.props.classOption){
@@ -54,8 +54,8 @@ class Select extends Component {
 
         return (
             <label className={`${classLabel} ${verified} ${error}`} >
-                {this.props.label}
-                <div className="select-container">
+                <span>{this.props.label}</span>
+                <div className="select-container flex">
                     <select className={`${classSelect} ${verified} ${error}`} onChange={this.handleChange} value={this.state.value}>
                         {
                             this.props.emptyFirst &&
@@ -69,7 +69,7 @@ class Select extends Component {
                                 })
                         }
                     </select>
-                    <div class="select-ico">></div>
+                    <div class="select-ico flex flex-align-items--center flex-justify-content--center">^</div>
                 </div>
 
             </label>
