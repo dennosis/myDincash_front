@@ -29,6 +29,8 @@ class Input extends Component {
 
         let classInput=""
         let classLabel=""
+        let classContainer=""
+
         if(this.props.classInput){
             classInput=this.props.classInput
         }else{
@@ -41,9 +43,15 @@ class Input extends Component {
             classLabel=`label label--medium ${this.props.classLabelAdd || ''}`
         }
 
+        if(this.props.classContainer){
+            classContainer=this.props.classContainer
+        }else{
+            classContainer=`flex flex-align-items--center${this.props.classContainerAdd || ''}`
+        }
+
         return (
-            <label className={`${classLabel} ${verified} ${error}`} >
-                <span>{this.props.label}</span>
+            <label className={`${classContainer}`}>
+                <span className={`${classLabel} ${verified} ${error}`}>{this.props.label}</span>
                 <input className={`${classInput}  ${verified} ${error}`} type="text" onChange={this.handleChange} defaultValue={this.state.value}/>
             </label>
         );

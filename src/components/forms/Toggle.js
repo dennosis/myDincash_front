@@ -118,6 +118,8 @@ export class ToggleTeste extends Component {
 
         let classButton=""
 
+        let classContainer=""
+
         if(this.props.classLabel){
             classLabel=this.props.classLabel
         }else{
@@ -133,12 +135,18 @@ export class ToggleTeste extends Component {
         if(this.props.classButton){
             classButton=this.props.classButton
         }else{
-            classButton=`toggle__button ${this.props.classButtonAdd}`
+            classButton=`toggle__button ${this.props.classButtonAdd || ""}`
+        }
+
+        if(this.props.classContainer){
+            classContainer=this.props.classContainer
+        }else{
+            classContainer=`flex flex-align-items--center${this.props.classContainerAdd || ""}`
         }
 
         return (
-            <label className={`${classLabel} ${verified} ${error}`} >
-                {this.props.label}
+            <label className={`${classContainer}`} >
+                <span className={`${classLabel} ${verified} ${error}`} >{this.props.label}</span>
                 <div className={`${classToggle} ${verified} ${error} ${active}`} onClick={this.handleChange}>
                     <span className={`${classButton} ${verified} ${error}`}>{btnLabel}</span>
                 </div>

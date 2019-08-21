@@ -36,6 +36,8 @@ class Radio extends Component {
         let classOptionContainer=""
         let classOptionsContainer=""
         let classOptionLabel=""
+        let classContainer=""
+
         if(this.props.classLabel){
             classLabel=this.props.classLabel
         }else{
@@ -66,11 +68,16 @@ class Radio extends Component {
             classOptionLabel=`radio__label ${this.props.classOptionLabelAdd || ''}`
         }
 
+        if(this.props.classContainer){
+            classContainer=this.props.classContainer
+        }else{
+            classContainer=`flex flex-align-items--center${this.props.classContainerAdd || ""}`
+        }
 
 
         return (
-            <label className={`${classLabel} ${verified} ${error}`} >
-                <span>{this.props.label}</span>
+            <label className={`${classContainer}`} >
+                <span className={`${classLabel} ${verified} ${error}`}>{this.props.label}</span>
                 <div className={`${classOptionsContainer}`}>
                     
                     {

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faAngleDown} from '@fortawesome/free-solid-svg-icons'
 
 class Select extends Component {
     constructor(props){
@@ -32,6 +34,7 @@ class Select extends Component {
         let classSelect=""
         let classLabel=""
         let classOption=""
+        let classContainer=""
 
         if(this.props.classInput){
             classSelect=this.props.classSelect
@@ -50,11 +53,16 @@ class Select extends Component {
         }else{
             classOption=`select__option ${this.props.classOptionAdd || ''}`
         }
-    
+
+        if(this.props.classContainer){
+            classContainer=this.props.classContainer
+        }else{
+            classContainer=`flex flex-align-items--center ${this.props.classContainerAdd || ''}`
+        }
 
         return (
-            <label className={`${classLabel} ${verified} ${error}`} >
-                <span>{this.props.label}</span>
+            <label className={`${classContainer}`}>
+                <span className={`${classLabel} ${verified} ${error}`} >{this.props.label}</span>
                 <div className="select-container flex">
                     <select className={`${classSelect} ${verified} ${error}`} onChange={this.handleChange} value={this.state.value}>
                         {
@@ -69,7 +77,9 @@ class Select extends Component {
                                 })
                         }
                     </select>
-                    <div class="select-ico flex flex-align-items--center flex-justify-content--center">^</div>
+                    <div className={`select-ico ${verified} ${error} flex flex-align-items--center flex-justify-content--center`}>
+                        <FontAwesomeIcon icon={faAngleDown} size="1x"/>
+                    </div>
                 </div>
 
             </label>
