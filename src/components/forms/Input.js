@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import IconAlert from './IconAlert'
 class Input extends Component {
     constructor(props){
         super(props)
@@ -53,6 +53,7 @@ class Input extends Component {
             <label className={`${classContainer}`}>
                 <span className={`${classLabel} ${verified} ${error}`}>{this.props.label}</span>
                 <input className={`${classInput}  ${verified} ${error}`} type="text" onChange={this.handleChange} defaultValue={this.state.value}/>
+                <IconAlert type="error"/>
             </label>
         );
     }
