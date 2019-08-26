@@ -6,6 +6,21 @@ import Radio from '../forms/Radio';
 import Carousel from '../utils/Carousel';
 class Content extends Component {
 
+    constructor(props){
+        super(props)
+        this.state={
+            value:false
+        }
+    }
+
+
+    teste=()=>{
+        this.setState({
+            value:!this.state.value
+        })
+    }
+
+
   render() {
     return (
         <section className="l-content flex flex--column overflow--auto" >
@@ -95,17 +110,17 @@ class Content extends Component {
 
                     </div>
 
-                        <Toggle label="teste" isActive />
+                        <Toggle label="teste" isActive onChange={this.teste}/>
 
                         <Toggle label="teste" isActive isError/>
 
                         <Toggle label="teste" isActive isVerified/>
 
-                        <Input label="teste" isVerified />
+                        <Input label="teste" state={'success'} hasIcon={true} message={"test message"}/>
 
-                        <Input label="teste" isVerified />
+                        <Input label="teste" state={'success'} message={"test message"} />
 
-                        <Input label="teste222" isError initValue={"valor teste"} />
+                        <Input hasContainer={this.state.value} label="teste222" hasIcon={true} state={'danger'} dafaultValue={"valor teste"} message={"test message"}/>
 
 
                         <Select label={'select teste'} emptyFirst options={[

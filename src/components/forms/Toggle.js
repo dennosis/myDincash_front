@@ -56,14 +56,20 @@ export default class Toggle extends Component {
         if(this.props.classButton){
             classButton=this.props.classButton
         }else{
-            classButton=`toggle__button ${this.props.classButtonAdd}`
+            classButton=`toggle__button shadow--small ${this.props.classButtonAdd}`
         }
 
+
+
         return (
-            <label className={`${classLabel} ${verified} ${error}`} >
-                <span>{this.props.label}</span>
-                <div className={`${classToggle} ${verified} ${error} ${active}`} onClick={this.handleChange}>
-                    <span className={`${classButton} ${verified} ${error}`}>{btnLabel}</span>
+            <label >
+                {
+                    this.props.label &&
+                    <label className={`${classLabel} ${verified} ${error}`}>{this.props.label}</label>
+                }
+                
+                <div className={`${classToggle} ${verified} ${error} ${active}`} >
+                    <span onClick={this.handleChange} className={`${classButton} ${verified} ${error}`}>{btnLabel}</span>
                 </div>
             </label>
         );

@@ -60,9 +60,15 @@ class Select extends Component {
             classContainer=`flex flex-align-items--center ${this.props.classContainerAdd || ''}`
         }
 
+
+        
         return (
             <label className={`${classContainer}`}>
-                <span className={`${classLabel} ${verified} ${error}`} >{this.props.label}</span>
+                {
+                    this.props.label &&
+                    <label className={`${classLabel} ${verified} ${error}`} >{this.props.label}</label>
+                }
+
                 <div className="select-container flex">
                     <select className={`${classSelect} ${verified} ${error}`} onChange={this.handleChange} value={this.state.value}>
                         {

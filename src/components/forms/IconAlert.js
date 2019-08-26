@@ -8,66 +8,58 @@ import {faCheckCircle} from '@fortawesome/free-solid-svg-icons'
 class IconAlert extends Component {
     constructor(props){
         super(props)
-        this.state={
-            value:false || props.initValue
-        }
+        this.state={}
     }
 
-    handleChange = (event) =>{
-        event.preventDefault();
-        this.setState({
-            value: event.target.value
-        });
-        if(this.props.onChange)
-            this.props.onChange(this.state.value)
+
+    static getDerivedStateFromProps(nextProps) {    
+        let icon
+        let classState=[]
+
+        switch(nextProps.type){
+            case'success':
+                icon=faCheckCircle 
+                classState.push('is-success')
+                break
+            case'danger':
+                icon=faTimesCircle
+                classState.push('is-danger')
+                break
+            case'warning':
+                icon=faExclamationCircle
+                classState.push('is-warning')
+                break
+            default:
+                icon=faInfoCircle
+                classState.push('is-info')
+        }
+
+        return {
+            icon:icon,
+            classContainer: [...nextProps.classContainer,...nextProps.classContainerAdd],
+            classIcon:[...nextProps.classIcon,...nextProps.classIconAdd,...classState],
+            hasContainer: nextProps.hasContainer,
+        }
     }
 
     render() {
-        
-        let classState=""
-
-        let classContainer=""
-        let classIcon=""
-        let icon=""
-        
-        if(this.props.classIcon){
-            classIcon=this.props.classIcon
-        }else{
-            classIcon=`icon ${this.props.classIconAdd || ''}`
-        }
-
-        if(this.props.classContainer){
-            classContainer=this.props.classContainer
-        }else{
-            classContainer=`flex flex-align-items--center ${this.props.classContainerAdd || ''}`
-        }
-
-
-        if(this.props.type == 'error'){
-            classState="is-error"
-            icon = faTimesCircle
-            
-        }else if(this.props.type == 'verified'){
-            classState="is-verified"
-            icon = faCheckCircle
-
-        }else if(this.props.type == 'alert'){
-            classState="is-alert"
-            icon = faExclamationCircle
-
-        }else{
-            classState="is-info"
-            icon = faInfoCircle
-        }
-
-
-
+        const Container=this.state.hasContainer ? 'span' :React.Fragment;
+        let className=this.state.hasContainer?{className:this.state.classContainer.join(" ")}:{}
         return (
-            <div className={`${classContainer}`}>
-                <FontAwesomeIcon className={`${classIcon} ${classState}`} icon={icon}/>
-            </div>
+            <Container {...className}>
+                <FontAwesomeIcon className={this.state.classIcon.join(" ")} icon={this.state.icon}/>
+            </Container>
         );
     }
 }
- 
+
+IconAlert.defaultProps = {
+
+    classContainer: ['flex','flex-align-items--center'],
+    classContainerAdd: [],
+    classIcon: ['icon'],
+    classIconAdd: [],
+    
+    hasContainer: false,
+};
 export default IconAlert
