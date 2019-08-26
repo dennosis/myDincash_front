@@ -123,7 +123,7 @@ class Content extends Component {
                         <Input hasContainer={this.state.value} label="teste222" hasIcon={true} state={'danger'} dafaultValue={"valor teste"} message={"test message"}/>
 
 
-                        <Select label={'select teste'} emptyFirst options={[
+                        <Select label={'select teste'} state={'danger'} hasEmptyFirstOption hasContainer={this.state.value} hasIcon={this.state.value} hasCustomizedStructure={this.state.value} options={[
                             {value: 1, label: "um"},
                             {value: 2, label: "dois"},
                             {value: 3, label: "tres"},
@@ -132,7 +132,7 @@ class Content extends Component {
 
                         ]}/>
 
-                        <Select label={'select teste'} isError emptyFirst options={[
+                        <Select label={'select teste'} state={'success'} hasEmptyFirstOption options={[
                             {value: 1, label: "um"},
                             {value: 2, label: "dois"},
                             {value: 3, label: "tres"},
@@ -141,7 +141,7 @@ class Content extends Component {
 
                         ]}/>
 
-                        <Select label={'select teste'} isVerified emptyFirst options={[
+                        <Select label={'select teste'} state={'success'} hasEmptyFirstOption options={[
                             {value: 1, label: "um"},
                             {value: 2, label: "dois"},
                             {value: 3, label: "tres"},
