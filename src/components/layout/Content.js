@@ -63,21 +63,21 @@ class Content extends Component {
 
                     
 
-                    <form className="margin--small flex flex--column padding--medium flex--wrap flex--stretch--between block shadow--small">
-                    <div className="flex flex-justify-content--around">
-                        <Radio label={'Radio teste'}
-                            classLabelAdd="flex--column" 
-                            classOptionsContainerAdd="flex--column" 
-                            classOptionContainerAdd=" flex"
-                            classRadioAdd="margin--xsmall"
-                            options={[
-                                {value: 1, label: "um"},
-                                {value: 2, label: "dois"},
-                                {value: 3, label: "tres"},
-                                {value: 4, label: "quatro"},
-                                {value: 5, label: "cinco"},
+                <form className="margin--small flex flex--column padding--medium flex--wrap flex--stretch--between block shadow--small">
+                    <div className="flex flex--column">
+                            <Radio label={'Radio teste'}
+                                classLabelAdd="flex--column" 
+                                classOptionsContainerAdd="flex--column" 
+                                classOptionContainerAdd=" flex"
+                                classRadioAdd="margin--xsmall"
+                                options={[
+                                    {value: 1, label: "um"},
+                                    {value: 2, label: "dois"},
+                                    {value: 3, label: "tres"},
+                                    {value: 4, label: "quatro"},
+                                    {value: 5, label: "cinco"},
 
-                        ]}/>
+                            ]}/>
                             <Radio label={'Radio teste'} 
                                 classLabelAdd="flex--column" 
                                 classOptionsContainer="flex--column" 
@@ -150,7 +150,7 @@ class Content extends Component {
 
                         ]}/>
 
-                        <div className="padding-top--small padding-bottom--small flex">
+                        <div className="padding-top--small padding-bottom--small flex flex--column">
                                 <span className="button flex__item--grow margin--small shadow--small">button</span>
                                 <span className="button flex__item--grow margin--small shadow--small is-error">button</span>
                                 <span className="button flex__item--grow margin--small shadow--small is-verified">button</span>
